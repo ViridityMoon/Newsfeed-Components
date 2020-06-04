@@ -136,15 +136,22 @@ function makeArticle(articleDataObj){
   paragraph1.textContent = articleDataObj.firstParagraph;
   paragraph2.textContent = articleDataObj.secondParagraph;
   paragraph3.textContent = articleDataObj.thirdParagraph;
+  button.textContent = '\u25bc';
+  button.addEventListener('click', function(){
+    article.classList.toggle('article-open');
+  })
+  
   return article;
 }
-const newArticle = makeArticle({title:'noah', date:'April 26th, 1999', firstParagraph:`Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `, secondParagraph:`Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `, thirdParagraph:`Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
-hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
-Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `});
+data.push({
+  title:'noah', 
+  date:'april 26th, 1999',
+  firstParagraph:'vnjlkcxjnklxzjvoikjcv',
+  secondParagraph: 'njlkcxjnklxzjvoikjcv',
+  thirdParagraph:'njlkcxjnklxzjvoikjcv',
+});
+
+makeArticle(data);
 
 for (let i = 0; i < data.length; i++){
   const article = makeArticle(data[i]);
