@@ -100,6 +100,7 @@ const data = [
   </div>
 
   Hint: You will need to use createElement more than once here!
+  
 
   Your function should take either an object as its one argument, or 5 separate arguments mapping to each piece of the data object above.
 
@@ -111,3 +112,50 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+const articles = document.querySelector('.articles')
+
+function makeArticle(articleDataObj){
+  const article = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const paragraph = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const button = document.createElement('span')
+  article.appendChild(h2);
+  article.appendChild(paragraph);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(button);
+  article.classList.add('article');
+  paragraph.classList.add('date');
+  button.classList.add('expandButton');
+  h2.textContent = articleDataObj.title;
+  paragraph.textContent = articleDataObj.date;
+  paragraph1.textContent = articleDataObj.firstParagraph;
+  paragraph2.textContent = articleDataObj.secondParagraph;
+  paragraph3.textContent = articleDataObj.thirdParagraph;
+  button.textContent = '\u25bc';
+  button.addEventListener('click', function(){
+    article.classList.toggle('article-open');
+  })
+  
+  return article;
+}
+data.push({
+  title:'noah', 
+  date:'april 26th, 1999',
+  firstParagraph:'vnjlkcxjnklxzjvoikjcv',
+  secondParagraph: 'njlkcxjnklxzjvoikjcv',
+  thirdParagraph:'njlkcxjnklxzjvoikjcv',
+});
+
+makeArticle(data);
+
+for (let i = 0; i < data.length; i++){
+  const article = makeArticle(data[i]);
+  articles.appendChild(article);
+}
+
+  
